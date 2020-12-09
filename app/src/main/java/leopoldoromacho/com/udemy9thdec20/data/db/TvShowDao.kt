@@ -10,11 +10,11 @@ import leopoldoromacho.com.udemy9thdec20.data.model.TvShow.TvShow
 interface TvShowDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveTVShows(tvShows: List<TvShow>)
+    suspend fun saveTvShows(tvShows: List<TvShow>)
 
     @Query("DELETE FROM popular_tvShows")
-    suspend fun deleteAllTVShows()
+    suspend fun deleteAllTvShows()
 
     @Query("SELECT * FROM popular_tvShows")
-    suspend fun getAllTVShows():List<TvShow>
+    suspend fun getTvShows():List<TvShow>
 }
