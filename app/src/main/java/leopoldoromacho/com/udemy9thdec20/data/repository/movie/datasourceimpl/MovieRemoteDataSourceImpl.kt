@@ -1,8 +1,8 @@
-package leopoldoromacho.com.udemy9thdec20.data.datasource
+package leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasourceimpl
 
 import leopoldoromacho.com.udemy9thdec20.data.api.TMDBService
-import leopoldoromacho.com.udemy9thdec20.data.datasource.MovieRemoteDatasource
 import leopoldoromacho.com.udemy9thdec20.data.model.movie.MovieList
+import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieRemoteDatasource
 import retrofit2.Response
 
 class MovieRemoteDataSourceImpl(

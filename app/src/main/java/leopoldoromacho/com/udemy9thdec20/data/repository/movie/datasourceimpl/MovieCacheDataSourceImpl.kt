@@ -1,13 +1,14 @@
-package leopoldoromacho.com.udemy9thdec20.data.datasource
+package leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasourceimpl
 
 import leopoldoromacho.com.udemy9thdec20.data.model.movie.Movie
+import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieCacheDataSource
 
 class MovieCacheDataSourceImpl: MovieCacheDataSource {
 
-    private val movieList = ArrayList<Movie>()
+    private var movieList = ArrayList<Movie>()
 
     override suspend fun getMoviesFromCache(): List<Movie> {
-        TODO("Not yet implemented")
+        return movieList
     }
 
     override suspend fun saveMoviesToCache(movies: List<Movie>) {
