@@ -1,4 +1,4 @@
-package leopoldoromacho.com.udemy9thdec20.data.model
+package leopoldoromacho.com.udemy9thdec20.data.db
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -10,7 +10,7 @@ import leopoldoromacho.com.udemy9thdec20.data.model.TvShow.TvShow
 interface TvShowDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveTVShows(movies: List<TvShow>)
+    suspend fun saveTVShows(tvShows: List<TvShow>)
 
     @Query("DELETE FROM popular_tvShows")
     suspend fun deleteAllTVShows()

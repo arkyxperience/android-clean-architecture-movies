@@ -1,4 +1,4 @@
-package leopoldoromacho.com.udemy9thdec20.data.model
+package leopoldoromacho.com.udemy9thdec20.data.db
 
 import androidx.room.Dao
 import androidx.room.Insert

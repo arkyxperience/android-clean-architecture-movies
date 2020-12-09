@@ -1,4 +1,4 @@
-package com.anushka.tmdbclient.data.model.artist
+package leopoldoromacho.com.udemy9thdec20.data.model.artist
 
 
 import androidx.room.ColumnInfo
