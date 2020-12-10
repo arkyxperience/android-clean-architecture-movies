@@ -4,7 +4,7 @@ import leopoldoromacho.com.udemy9thdec20.data.api.TMDBService
 import leopoldoromacho.com.udemy9thdec20.data.repository.artist.datasource.ArtistRemoteDatasource
 import leopoldoromacho.com.udemy9thdec20.data.model.artist.ArtistList
 import leopoldoromacho.com.udemy9thdec20.data.model.movie.MovieList
-import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieRemoteDatasource
+import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieRemoteDataSource
 import retrofit2.Response
 
 class ArtistRemoteDataSourceImpl(

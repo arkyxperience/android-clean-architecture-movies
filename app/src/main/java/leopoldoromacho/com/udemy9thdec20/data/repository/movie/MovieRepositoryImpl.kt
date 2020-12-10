@@ -4,11 +4,11 @@ import android.util.Log
 import leopoldoromacho.com.udemy9thdec20.data.model.movie.Movie
 import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieCacheDataSource
 import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieLocalDataSource
-import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieRemoteDatasource
+import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieRemoteDataSource
 import leopoldoromacho.com.udemy9thdec20.domain.repository.MovieRepository
 
 class MovieRepositoryImpl(
-        private val movieRemoteDataSource: MovieRemoteDatasource,
+        private val movieRemoteDataSource: MovieRemoteDataSource,
         private val movieLocalDataSource: MovieLocalDataSource,
         private val movieCacheDataSource: MovieCacheDataSource
 ) : MovieRepository {
