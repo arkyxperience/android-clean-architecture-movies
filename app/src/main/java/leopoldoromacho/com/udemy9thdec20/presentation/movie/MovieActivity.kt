@@ -25,16 +25,29 @@ class MovieActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_movie)
-        (application as Injector).createMovieSubComponent()
-            .inject(this)
 
-        movieViewModel=ViewModelProvider(this,factory)
-            .get(MovieViewModel::class.java)
+
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_movie)
+        (application as Injector).createMovieSubComponent().inject(this)
+
+        movieViewModel = ViewModelProvider(this,factory).get(MovieViewModel::class.java)
+
         val responseLiveData = movieViewModel.getMovies()
+        responseLiveData.observe(this, Observer {
+//            val text = "List of movies received!"
+//            val duration = Toast.LENGTH_SHORT
+//            val toast = Toast.makeText(applicationContext, text, duration)
+//            toast.show()
+        })
+
+        /*
+
+
+
+
         responseLiveData.observe(this, Observer {
             Log.i("MYTAG", it.toString())
         })
-
+        */
     }
 }
