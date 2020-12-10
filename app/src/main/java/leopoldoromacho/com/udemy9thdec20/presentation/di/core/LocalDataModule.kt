@@ -1,4 +1,4 @@
-package leopoldoromacho.com.udemy9thdec20.presentation.di
+package leopoldoromacho.com.udemy9thdec20.presentation.di.core
 import dagger.Module
 import dagger.Provides
 import leopoldoromacho.com.udemy9thdec20.data.db.MovieDao

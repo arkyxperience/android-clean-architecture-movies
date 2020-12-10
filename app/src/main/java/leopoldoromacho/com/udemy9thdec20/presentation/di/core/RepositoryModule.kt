@@ -1,4 +1,4 @@
-package leopoldoromacho.com.udemy9thdec20.presentation.di
+package leopoldoromacho.com.udemy9thdec20.presentation.di.core
 
 
 import dagger.Module
@@ -18,13 +18,13 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun provideMovieRepository(
-        movieRemoteDatasource: MovieRemoteDataSource,
+        movieRemoteDataSource: MovieRemoteDataSource,
         movieLocalDataSource: MovieLocalDataSource,
         movieCacheDataSource: MovieCacheDataSource
     ): MovieRepository {
 
         return MovieRepositoryImpl(
-            movieRemoteDatasource,
+            movieRemoteDataSource,
             movieLocalDataSource,
             movieCacheDataSource
         )

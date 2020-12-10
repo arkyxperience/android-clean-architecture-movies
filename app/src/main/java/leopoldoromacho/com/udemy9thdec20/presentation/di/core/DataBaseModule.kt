@@ -1,4 +1,4 @@
-package leopoldoromacho.com.udemy9thdec20.presentation.di
+package leopoldoromacho.com.udemy9thdec20.presentation.di.core
 
 import android.content.Context
 import androidx.room.Room
