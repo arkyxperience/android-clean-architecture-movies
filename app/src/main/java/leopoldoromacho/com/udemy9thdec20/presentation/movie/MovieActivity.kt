@@ -26,7 +26,6 @@ class MovieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         binding = DataBindingUtil.setContentView(this,R.layout.activity_movie)
         (application as Injector).createMovieSubComponent().inject(this)
 
@@ -34,20 +33,21 @@ class MovieActivity : AppCompatActivity() {
 
         val responseLiveData = movieViewModel.getMovies()
         responseLiveData.observe(this, Observer {
-//            val text = "List of movies received!"
-//            val duration = Toast.LENGTH_SHORT
-//            val toast = Toast.makeText(applicationContext, text, duration)
-//            toast.show()
+
+            val listOfMovies = it
+            val duration = Toast.LENGTH_SHORT
+            var text = ""
+
+            if (listOfMovies != null) {
+                text = "List of movies received. Size: " + listOfMovies.size
+            }
+            else {
+                text = "The object received was null"
+            }
+            val toast = Toast.makeText(applicationContext, text, duration)
+            toast.show()
+
         })
 
-        /*
-
-
-
-
-        responseLiveData.observe(this, Observer {
-            Log.i("MYTAG", it.toString())
-        })
-        */
     }
 }
