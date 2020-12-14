@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -46,6 +47,37 @@ class MovieActivity : AppCompatActivity() {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.update, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+            R.id.action_update -> {
+                updateMoviesButtonPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
+    }
+
+    private fun updateMoviesButtonPressed() {
+
+        binding.movieProgressBar.visibility = View.VISIBLE
+        binding.movieRecyclerView.visibility = View.GONE
+
+        val response = movieViewModel.updateMovies()
+        response.observe(this, Observer {
+            if (it!=null){
+                adapter.setList(it)
+                binding.movieProgressBar.visibility = View.GONE
+                binding.movieRecyclerView.visibility = View.VISIBLE
+            }
+            else {
+                binding.movieProgressBar.visibility = View.GONE
+                binding.movieRecyclerView.visibility = View.VISIBLE
+            }
+        })
     }
 
     private fun initRecyclerView(){
