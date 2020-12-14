@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -15,6 +17,7 @@ import leopoldoromacho.com.udemy9thdec20.databinding.ActivityHomeBinding
 import leopoldoromacho.com.udemy9thdec20.databinding.ActivityMovieBinding
 import leopoldoromacho.com.udemy9thdec20.presentation.di.core.Injector
 import leopoldoromacho.com.udemy9thdec20.presentation.movie.MovieViewModel
+import leopoldoromacho.com.udemy9thdec20.R.menu.update
 import javax.inject.Inject
 
 class MovieActivity : AppCompatActivity() {
@@ -39,6 +42,11 @@ class MovieActivity : AppCompatActivity() {
         initRecyclerView()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.update, menu)
+        return true
+    }
 
     private fun initRecyclerView(){
         binding.movieRecyclerView.layoutManager = LinearLayoutManager(this)
