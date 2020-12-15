@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import leopoldoromacho.com.udemy9thdec20.R
 import leopoldoromacho.com.udemy9thdec20.databinding.ActivityHomeBinding
 import leopoldoromacho.com.udemy9thdec20.presentation.movie.MovieActivity
-import leopoldoromacho.com.udemy9thdec20.presentation.tvShows.TvShowActivity
+import leopoldoromacho.com.udemy9thdec20.presentation.tv.TvShowActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding

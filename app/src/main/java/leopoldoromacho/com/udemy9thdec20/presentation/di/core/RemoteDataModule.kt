@@ -3,6 +3,8 @@ package leopoldoromacho.com.udemy9thdec20.presentation.di.core
 import dagger.Module
 import dagger.Provides
 import leopoldoromacho.com.udemy9thdec20.data.api.TMDBService
+import leopoldoromacho.com.udemy9thdec20.data.repository.TvShow.datasource.TvShowRemoteDatasource
+import leopoldoromacho.com.udemy9thdec20.data.repository.TvShow.datasourceImpl.TvShowRemoteDataSourceImpl
 import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasource.MovieRemoteDataSource
 import leopoldoromacho.com.udemy9thdec20.data.repository.movie.datasourceimpl.MovieRemoteDataSourceImpl
 import javax.inject.Singleton
@@ -14,6 +16,14 @@ class RemoteDataModule(private val apiKey: String) {
     fun provideMovieRemoteDataSource(tmdbService: TMDBService): MovieRemoteDataSource {
         return MovieRemoteDataSourceImpl (
             tmdbService, apiKey
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideTvRemoteDataSource(tmdbService: TMDBService): TvShowRemoteDatasource {
+        return TvShowRemoteDataSourceImpl(
+                tmdbService, apiKey
         )
     }
 
